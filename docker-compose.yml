@@ -1,0 +1,17 @@
+version: "24.0.7"
+
+services:
+  postgres:
+    container_name: thread-app-node-db
+    image: postgres
+    ports:
+      - "5000:5000"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: thread
+      POSTGRES_PASSWORD: thread
+
+volumes:
+  postgres_data:
