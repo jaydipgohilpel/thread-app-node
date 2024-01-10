@@ -3,13 +3,12 @@ import { prismaClient } from '../lib/db';
 import { User } from './user/index'
 
 async function createApolloGraphqlServer() {
-    // ${User.queries}
     const graphQlServer = new ApolloServer({
-        typeDefs: `
+    typeDefs: `
     type Query{
-        hello:String
+        ${User.queries}
     }
-    
+
     type Mutation{
         ${User.mutations}
     }
