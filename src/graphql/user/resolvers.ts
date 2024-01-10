@@ -7,6 +7,11 @@ const queries = {
             password: payload.password,
         });
         return token;
+    },
+    getCurrentLoggedInUser: async (_: any, par: any, context: any) => {
+        if (context)
+            return context;
+        throw new Error("Invalid token")
     }
 
 }

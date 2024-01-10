@@ -54,6 +54,10 @@ class UserService {
         const token = jwt.sign({ id: user.id, email: user.email }, jwtSecret)
         return token;
     }
+
+    public static decodeJWTToken(token: string) {
+        return jwt.verify(token, jwtSecret)
+    }
 }
 
 export default UserService
